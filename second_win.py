@@ -64,15 +64,15 @@ class TestWin(QWidget):
         self.l_line.addWidget(self.line_age, alignment= Qt.AlignLeft)
         
         self.l_line.addWidget(self.txt_test1, alignment= Qt.AlignLeft)
-        self.l_line.addWidget(self.btn_test1, alignment= Qt.AlingLeft)
+        self.l_line.addWidget(self.btn_test1, alignment= Qt.AlignLeft)
         self.l_line.addWidget(self.line_test1, alignment= Qt.AlignLeft)
 
         self.l_line.addWidget(self.txt_test2, alignment= Qt.AlignLeft)
-        self.l_line.addWidget(self.btn_test2, alignment= Qt.AlingLeft)
+        self.l_line.addWidget(self.btn_test2, alignment= Qt.AlignLeft)
         self.l_line.addWidget(self.line_test2, alignment= Qt.AlignLeft)
 
         self.l_line.addWidget(self.txt_test3, alignment= Qt.AlignLeft)
-        self.l_line.addWidget(self.btn_test3, alignment= Qt.AlingLeft)
+        self.l_line.addWidget(self.btn_test3, alignment= Qt.AlignLeft)
         self.l_line.addWidget(self.line_test3, alignment= Qt.AlignLeft)
 
         self.l_line.addWidget(self.btn_next, alignment= Qt.AlignCenter) 
