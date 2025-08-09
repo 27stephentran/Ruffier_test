@@ -1,5 +1,5 @@
 # write the code for the main application and the first screen here
-from PyQt5.QtCore import Qt, QTimer, QTime, QLocal
+from PyQt5.QtCore import Qt, QTimer, QTime
 from PyQt5.QtWidgets import (
     QApplication, QWidget,
     QHBoxLayout, QVBoxLayout,
@@ -93,7 +93,7 @@ class TestWin(QWidget):
 
     def next_click(self):
         self.hide()
-        self.exp = Experiment(self.line_age.text(), self.line_test1.text(), 
+        self.exp = Experiment(int(self.line_age.text()), self.line_test1.text(), 
                               self.line_test2.text(), self.line_test3.text())
         self.fw = FinalWin(self.exp)
 
@@ -122,7 +122,7 @@ class TestWin(QWidget):
         global time
         time = time.addSecs(-1)
         self.text_timer.setText(time.toString("hh:mm:ss"))
-        self.text_timer.setFont(QFont("Times", 36, QFont.bolb))
+        self.text_timer.setFont(QFont("Times", 36, QFont.Bold))
         self.text_timer.setStyleSheet("color: rgb(0,0,0)")
         if time.toString("hh:mm:ss") == "00:00:00":
             self.timer.stop()
@@ -131,7 +131,7 @@ class TestWin(QWidget):
         global time
         time = time.addSecs(-1)
         self.text_timer.setText(time.toString("hh:mm:ss")[6:8])
-        self.text_timer.setFont(QFont("Times", 36, QFont.bolb))
+        self.text_timer.setFont(QFont("Times", 36, QFont.Bold))
         self.text_timer.setStyleSheet("color: rgb(0,0,0)")
         if time.toString("hh:mm:ss") == "00:00:00":
             self.timer.stop()
@@ -146,13 +146,16 @@ class TestWin(QWidget):
             self.text_timer.setStyleSheet("color: rbg(0, 255, 0)")
         else:
             self.text_timer.setStyleSheet("color: rbg(0, 0, 0)")    
-        self.text_timer.setFont(QFont("Times", 36, QFont.bold))  
+        self.text_timer.setFont(QFont("Times", 36, QFont.Bold))  
         if time.toString("hh:mm:ss") == "00:00:00":
             self.timer.stop()
 
             
     def connects(self):
         self.btn_next.clicked.connect(self.next_click)
+        self.btn_test1.clicked.connect(self.timer_test)
+        self.btn_test2.clicked.connect(self.timer_sits)
+        self.btn_test3.clicked.connect(self.timer_final)
         
     def set_appear(self):
         self.setWindowTitle(txt_title)
